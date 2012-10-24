@@ -1,0 +1,24 @@
+{
+  "name": "grunt-docco-husky",
+  "version": "0.0.0",
+  "description": "Docco husky task for grunt",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vytch/grunt-docco-husky"
+  },
+  "keywords": [
+    "grunt",
+    "docco",
+    "docco-husky"
+  ],
+  "dependencies": {
+    "grunt": "~0.3.9",
+    "docco-husky": "https://github.com/vytch/docco-husky/tarball/33a09515cd88b83224934781c9e4152edee089c5"
+  },
+  "author": "Vy Hoang",
+  "license": "BSD"
+}

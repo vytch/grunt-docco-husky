@@ -15,7 +15,8 @@ You can add parameters to the grunt docco husky task and hook it to your develop
 ```javascript
 grunt.initConfig({
   docco_husky : {
-    args:['-name', 'test', 'js/*.js', 'assets/js/modules/*.js']
+    'project_name':'testing',
+    'files':['js/*.js']
   },
   watch : {
     files: ['js/*.js', 'spec/javascripts/libs/*.spec.js'],

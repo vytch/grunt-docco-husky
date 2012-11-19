@@ -10,6 +10,19 @@ Then add this line to your project's `grunt.js` gruntfile:
 ```javascript
 grunt.loadNpmTasks('grunt-docco-husky');
 ```
+You can add parameters to the grunt docco husky task and hook it to your development workflow like so:
+
+```javascript
+grunt.initConfig({
+  docco_husky : {
+    args:['-name', 'test', 'js/*.js', 'assets/js/modules/*.js']
+  },
+  watch : {
+    files: ['js/*.js', 'spec/javascripts/libs/*.spec.js'],
+    tasks: 'docco_husky'
+  }
+});
+```
 
 [grunt]: https://github.com/cowboy/grunt
 [getting_started]: https://github.com/cowboy/grunt/blob/master/docs/getting_started.md

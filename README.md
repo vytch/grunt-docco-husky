@@ -28,7 +28,30 @@ grunt.initConfig({
 [getting_started]: https://github.com/cowboy/grunt/blob/master/docs/getting_started.md
 
 ## Documentation
-_(Coming soon)_
+
+### NOTES: ###
+
+Once docco-husky is installed, please add the "depedencies" property to your package.json:
+
+```javascript
+{
+  "name": "jquery-plugin",
+  "version": "0.0.0-ignored",
+  "engines": {
+    "node": ">= 0.6.0"
+  },
+  "scripts": {
+    "test": "grunt"
+  },
+  "devDependencies": {
+    "grunt": "~0.3.16",
+    "grunt-jasmine-runner": "0.5.5"
+  },
+  "dependencies": {}
+}
+``` 
+
+This should prevent docco-husky to crash when generating your documentation.
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt][grunt].

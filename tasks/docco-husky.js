@@ -7,11 +7,11 @@
 module.exports = function(grunt) {
 
   var docco = require('docco-husky');
-
+  var _ = require('underscore');
 
   // ### TASKS
   grunt.registerMultiTask('docco_husky', 'Docco-husky processor.', function() {
-    var options, tmp;
+    var options, tmp, cmd_options = [], args;
 
     // Getting the configs.
     tmp = grunt.config(['docco-husky', this.target, 'options']);
@@ -20,8 +20,16 @@ module.exports = function(grunt) {
       options = tmp;
     } else {
       grunt.verbose.writeln('Using master Docco-huskey options.');
-      options = grunt.config('docco_husky').args;
+      args = grunt.config('docco_husky').args;
+      cmd_options.push('-name');
+      cmd_options.push(args.project_name);
+      _.each(args.files, function(path){
+        cmd_options.push(path);
+      });
+
+      options = cmd_options;
     }
+
     grunt.verbose.writeflags(options, 'Options');
 
     var done = this.async();

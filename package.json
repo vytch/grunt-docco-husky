@@ -1,6 +1,6 @@
 {
   "name": "grunt-docco-husky",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Docco husky task for grunt",
   "main": "index.js",
   "scripts": {

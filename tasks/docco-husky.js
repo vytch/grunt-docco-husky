@@ -20,7 +20,7 @@ module.exports = function(grunt) {
       options = tmp;
     } else {
       grunt.verbose.writeln('Using master Docco-huskey options.');
-      args = grunt.config('docco_husky').args;
+      args = grunt.config('docco_husky');
       cmd_options.push('-name');
       cmd_options.push(args.project_name);
       _.each(args.files, function(path){

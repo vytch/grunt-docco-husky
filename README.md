@@ -13,10 +13,14 @@ grunt.loadNpmTasks('grunt-docco-husky');
 You can add parameters to the grunt docco husky task and hook it to your development workflow like so:
 
 ```javascript
+// create documentation for all files in `js` directory, at root level or in any subdirectories.
+
 grunt.initConfig({
   docco_husky : {
     'project_name':'testing',
-    'files':['js/*.js']
+    'files': {
+      src: ['js/{,*/}*.js']
+    }
   },
   watch : {
     files: ['js/*.js', 'spec/javascripts/libs/*.spec.js'],
@@ -25,8 +29,8 @@ grunt.initConfig({
 });
 ```
 
-[grunt]: https://github.com/cowboy/grunt
-[getting_started]: https://github.com/cowboy/grunt/blob/master/docs/getting_started.md
+[grunt]: http://gruntjs.com
+[getting_started]: http://gruntjs.com/getting-started
 
 ## Documentation
 
@@ -50,7 +54,7 @@ Once docco-husky is installed, please add the "depedencies" property to your pac
   },
   "dependencies": {}
 }
-``` 
+```
 
 This should prevent docco-husky to crash when generating your documentation.
 
@@ -58,8 +62,10 @@ This should prevent docco-husky to crash when generating your documentation.
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt][grunt].
 
 ## Release History
-_(Nothing yet)_
+
+* 0.1.0: support for Grunt 0.4.x API
+* 0.0.4: previous version with Grunt 0.3.x support
 
 ## License
-Copyright (c) 2012 David Souther  
+Copyright (c) 2012 David Souther
 Licensed under the MIT license.

@@ -33,7 +33,7 @@ module.exports = function(grunt) {
     grunt.verbose.writeflags(options, 'Options');
 
     var done = this.async();
-    var src = grunt.file.expandFiles(this.file.src);
+    var src = this.filesSrc;
     docco.document(options, function(err, result, code){
       grunt.log.writeln("Doccoed husky [" + src.join(", ") + "]; " + err ? err : "(No errors)" + "\n" + result + " " + code);
       done();

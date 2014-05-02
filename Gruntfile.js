@@ -43,6 +43,6 @@ module.exports = function(grunt) {
   grunt.loadTasks('tasks');
 
   // Default task.
-  grunt.registerTask('default', 'lint docco_husky');
+  grunt.registerTask('default', 'docco_husky');
 
 };
